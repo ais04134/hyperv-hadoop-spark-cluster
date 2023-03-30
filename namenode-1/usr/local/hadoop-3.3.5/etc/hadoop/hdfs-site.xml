@@ -17,5 +17,20 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
-
+    <property>
+        <name>dfs.replication</name> # hdfs 파일 블록 계수 지정 
+        <value>3</value> # 1: 데이터를 1개만 복사(가상분산모드), 3: (완전분산모드)
+    </property>
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>file:///hdfs_dir/namenode</value>
+    </property>
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>file:///hdfs_dir/datanode</value>
+    </property>
+    <property>
+        <name>dfs.namenode.secondary.http-address</name>
+        <value>worker01:50090</value>
+    </property>
 </configuration>
