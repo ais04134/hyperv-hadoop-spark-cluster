@@ -33,15 +33,15 @@ Virtual Machine 의 OS는 Ubuntu server 22.04 LTS 이다.
 
 node는 vCPU 2, ram(GiB) 16, Instance Storage(GB) 80 으로 구성하였다. 
 ### 2.1 노드 구성
-----
+
 namenode 2개, datanode 3개로 구성되어 있다.
 ### 2.2 설치요소(수정필요)
-----
+
 hadoop, spark, ...
 ### 2.3 필요 라이브러리, 프레임워크(수정필요)
----
+
 #### 2.3.1 모든 노드
-----
+
 ```
 openjdk-8-jdk
 python-3.10.6
@@ -54,10 +54,8 @@ spark-3.3.2
 pyspark-3.3.2
 ``` 
 #### 2.3.2 namenode
-----
 
 #### 2.3.3 datanode
-----
 
 ## 3. 아키텍처 구성
 
