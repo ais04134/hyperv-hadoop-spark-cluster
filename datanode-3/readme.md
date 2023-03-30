@@ -1,0 +1,1 @@
+Hadoop-Ecosystem에서 datanode-3 에 해당됩니다.

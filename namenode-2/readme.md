@@ -1,0 +1,1 @@
+Hadoop-Ecosystem에서 namenode-2 에 해당됩니다.

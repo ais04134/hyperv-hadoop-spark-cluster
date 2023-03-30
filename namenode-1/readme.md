@@ -1,1 +1,1 @@
-Hadoop-Ecosystem에서 namenode-1에 해당됩니다.
+Hadoop-Ecosystem에서 namenode-1 에 해당됩니다.
