@@ -23,18 +23,18 @@ Hadoop-Ecosystem-cluster-ARA
 
 Hadoop-Ecosystem을 활용하여, cluster 구성을 만들고 이를 활용하여 ARA를 수행한다. 
 
-이 프로젝트를 위해, hadoop, spark 등 이 쓰였다. ~~
+이 프로젝트를 위해, hadoop, yarn, spark을 사용하였다.
 
 ## 2. 구성환경
 
-Windows server 2022 Datasenter OS의 운영체제에서, Hyper-V를 이용해 5개의 가상환경을 만들어 진행하였다.
+Windows server 2022 Datasenter OS의 운영체제에서, Hyper-V를 이용해 7개의 가상환경을 만들어 진행하였다.
 
 Virtual Machine 의 OS는 Ubuntu server 22.04 LTS 이다.
 
 node는 vCPU 2, ram(GiB) 16, Instance Storage(GB) 80 으로 구성하였다. 
 ### 2.1 노드 구성
 
-namenode 2개, datanode 3개로 구성되어 있다.
+namenode 1개, SecondaryNamenode 1개, datanode 5개로 구성되어 있다.
 ### 2.2 설치요소(수정필요)
 
 hadoop, spark, ...
