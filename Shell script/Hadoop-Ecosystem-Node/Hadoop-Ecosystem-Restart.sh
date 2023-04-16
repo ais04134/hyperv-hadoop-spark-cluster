@@ -5,7 +5,7 @@ vim cluster-restart-all.sh
 
 # 아래 내용 추가 후 저장
 # Zeppelin stop
-/usr/local/zeppelin/bin/zeppelin-daemon.sh stop
+# /usr/local/zeppelin/bin/zeppelin-daemon.sh stop
 
 # Spark stop
 $SPARK_HOME/sbin/stop-all.sh
@@ -45,7 +45,7 @@ mapred --daemon start historyserver
 $SPARK_HOME/sbin/start-all.sh
 
 # Zeppelin run
-/usr/local/zeppelin/bin/zeppelin-daemon.sh start
+# /usr/local/zeppelin/bin/zeppelin-daemon.sh start
 
 # nn1, nn2 서로 역할이 바뀐다.
 hdfs haadmin -transitionToActive namenode1 --forcemanual
