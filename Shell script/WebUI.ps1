@@ -12,7 +12,7 @@ start chrome http://192.168.0.18:8088/
 start chrome http://192.168.0.18:50070/
 
 # Hadoop WEB UI 확인(Standby)
-start chrome http://192.168.0.18:50070/
+start chrome http://192.168.0.19:50070/
 
 # Hadoop JobHistory
 start chrome http://192.168.0.18:19888/
