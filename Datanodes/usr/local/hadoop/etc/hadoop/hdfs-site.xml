@@ -19,9 +19,25 @@
 <configuration>
     <!-- configuration hadoop -->
     <property>
+    <!-- HDFS의 데이터 복제 계수 -->
         <name>dfs.replication</name>
         <value>3</value>
     </property>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     <property>
         <name>dfs.namenode.name.dir</name>
         <value>/usr/local/hadoop/data/nameNode</value>

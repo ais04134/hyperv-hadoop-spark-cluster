@@ -14,21 +14,89 @@
 -->
 <configuration>
         <!-- Site specific YARN configuration properties -->
-        <property>
-                <name>yarn.nodemanager.aux-services</name>
-                <value>mapreduce_shuffle</value>
-        </property>
-        <property>
-                <name>yarn.nodemanager.aux-services.mapreduce_shuffle.class</name>
-                <value>org.apache.hadoop.mapred.ShuffleHandler</value>
-        </property>
-        <property>
+         <property>
+         <!-- 
+            리소스 매니저의 호스트 이름을 지정, 
+            클라이언트와 노드 매니저가 리소스 매니저와 통신할 수 있게 해준다. 
+         -->
                 <name>yarn.resourcemanager.hostname</name>
                 <value>nn1</value>
         </property>
         <property>
+        <!-- YARN 컨테이너 로그를 집계하여 HDFS에 저장할지 여부 -->
+                <name>yarn.log-aggregation-enable</name>
+                <value>true</value>
+        </property>
+        <property>
+        <!-- 집계된 로그를 HDFS에서 유지하는 기간을 초 단위로 지정 -->
+                <name>yarn.log-aggregation.retain-seconds</name>
+                <value>2592000</value> <!-- 30 days -->
+        </property>
+        <property>
+        <!-- 리소스 매니저 주소 -->
+                <name>yarn.resourcemanager.address</name>
+                <value>nn1:8032</value>
+        </property>
+        <property>
+        <!-- 리소스 매니저 스케줄러 주소 -->
+                <name>yarn.resourcemanager.scheduler.address</name>
+                <value>nn1:8030</value>
+        </property>
+        <property>
+        <!-- 리소스 매니저 웹 응용 프로그램 주소 -->
+                <name>yarn.resourcemanager.webapp.address</name>
+                <value>nn1:8088</value>
+        </property>
+        <property>
+        <!--
+            YARN이 컨테이너의 가상 메모리 사용량을 확인하는지 여부를 결정
+            이 설정을 비활성화하면 메모리 사용량에 관한 문제를 줄일 수 있다. 
+        -->
                 <name>yarn.nodemanager.vmem-check-enabled</name>
                 <value>false</value>
+        </property>
+        <property>
+        <!-- 노드 매니저에서 사용할 수 있는 보조 서비스를 지정 -->        
+                <name>yarn.nodemanager.aux-services</name>
+                <value>mapreduce_shuffle</value>
+        </property>
+        <property>
+        <!-- MapReduce 셔플 보조 서비스의 클래스를 지정 -->
+                <name>yarn.nodemanager.aux-services.mapreduce_shuffle.class</name>
+                <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+        </property>
+        <property>
+        <!-- 
+            각 노드 매니저의 사용 가능한 총메모리를 제어
+            12g(12288), 운영체제 등을 고려해 70~80% 비율 
+        -->
+                <name>yarn.nodemanager.resource.memory-mb</name>
+                <value>12288</value>
+        </property>
+        <property>
+        <!-- 각 노드 매니저의 사용 가능한 총 CPU 코어 수를 제어, 각 노드당 2개의 코어가 있으므로 2개로 지정 -->
+                <name>yarn.nodemanager.resource.cpu-vcores</name>
+                <value>2</value>
+        </property>
+        <property>
+        <!-- YARN 스케줄러가 할당할 수 있는 최소 메모리 크기를 결정, 요기서는 1g  -->
+                <name>yarn.scheduler.minimum-allocation-mb</name>
+                <value>1024</value>
+        </property>
+        <property>
+        <!-- YARN 스케줄러가 할당할 수 있는 최대 메모리 크기, 8g -->
+                <name>yarn.scheduler.maximum-allocation-mb</name>
+                <value>8192</value>
+        </property>
+        <property>
+        <!-- YARN 스케줄러가 할당할 수 있는 최소 CPU 코어 수, 1 -->
+                <name>yarn.scheduler.minimum-allocation-vcores</name>
+                <value>1</value>
+        </property>
+        <property>
+        <!-- YARN 스케줄러가 할당할 수 있는 최대 CPU 코어 수, 1 -->
+                <name>yarn.scheduler.maximum-allocation-vcores</name>
+                <value>1</value>
         </property>
 </configuration>
 
