@@ -28,6 +28,10 @@
                 <value>true</value>
         </property>
         <property>
+                <name>yarn.nodemanager.remote-app-log-dir</name>
+                <value>/path/to/your/log/directory</value>
+        </property>
+        <property>
         <!-- 집계된 로그를 HDFS에서 유지하는 기간을 초 단위로 지정 -->
                 <name>yarn.log-aggregation.retain-seconds</name>
                 <value>2592000</value> <!-- 30 days -->
@@ -94,9 +98,9 @@
                 <value>1</value>
         </property>
         <property>
-        <!-- YARN 스케줄러가 할당할 수 있는 최대 CPU 코어 수, 1 -->
+        <!-- YARN 스케줄러가 할당할 수 있는 최대 CPU 코어 수, 10 -->
                 <name>yarn.scheduler.maximum-allocation-vcores</name>
-                <value>1</value>
+                <value>10</value>
         </property>
 </configuration>
 

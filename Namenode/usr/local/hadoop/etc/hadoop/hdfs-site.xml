@@ -18,6 +18,30 @@
 
 <configuration>
     <!-- configuration hadoop -->
+        <property>
+    <!-- 
+        HDFS의 논리적 네임서비스 식별자를 지정
+        고가용성 구성 및 Federation 구성에서 사용
+     -->
+        <name>dfs.nameservices</name>
+        <value>geon-hadoop-cluster</value>
+    </property>
+    <property>
+    <!-- 
+        지정된 논리적 네임서비스에 대한
+        고가용성 네임노드 식별자를 지정
+     -->
+        <name>dfs.ha.namenodes.geon-hadoop-cluster</name>
+        <value>namenode1,namenode2</value>
+    </property>
+    <property>
+    <!-- 
+        고가용성 구성에서 네임노드가JournalNode에 대한
+        편집 로그를 공유할 수 있도록 구성된 URI를 지정
+     -->
+        <name>dfs.namenode.shared.edits.dir</name>
+        <value>qjournal://nn1:8485;nn2:8485;dn1:8485/geon-hadoop-cluster</value>
+    </property>
     <property>
     <!-- HDFS의 데이터 복제 계수 -->
         <name>dfs.replication</name>
@@ -45,45 +69,14 @@
         <name>dfs.datanode.data.dir</name>
         <value>/usr/local/hadoop/data/dataNode</value>
     </property>
-    <property>
-    <!-- 
-        NameNode의 RPC 및 서비스 RPC 서버가 바인딩되는 IP 주소를 지정 
-        기본값인 "0.0.0.0"은 모든 IP 주소에 바인딩된다. 
-        이 설정을 변경하면 NameNode가 특정 네트워크 인터페이스 또는 
-        IP 주소와만 통신하도록 제한할 수 있다. 
-    -->
-        <name>dfs.namenode.rpc-bind-host</name>
-        <value>0.0.0.0</value>
     </property>
     <property>
-        <name>dfs.namenode.servicerpc-bind-host</name>
-        <value>0.0.0.0</value>
-    </property>
-    <property>
-    <!-- 
-        NameNode의 RPC 서버가 바인딩되는 IP 주소를 지정
-        기본값은 0.0.0.0으로 설정되어 있어, 모든 네트워크 인터페이스에서 접속 가능
-        특정 네트워크 인터페이스에만 바인딩하려면 해당 IP 주소를 설정
-     -->
-        <name>dfs.namenode.rpc-bind-host</name>
-        <value>0.0.0.0</value>
-    </property>
-    <property>
-    <!-- 
-        NameNode의 HTTP 서버가 바인딩되는 IP 주소를 지정
-        기본값은 0.0.0.0으로 설정되어 있어, 모든 네트워크 인터페이스에서 접속할 수 있음
-        특정 네트워크 인터페이스에만 바인딩하려면 해당 IP 주소를 설정
-     -->
-        <name>dfs.namenode.http-bind-host</name>
-        <value>0.0.0.0</value>
-    </property>
-    <property>
-    <!-- xxx -->
-        <name>dfs.namenode.rpc-address.my-hadoop-cluster.namenode1</name>
+    <!-- NameNode에 대한 RPC(Remote Procedure Call) 주소 -->
+        <name>dfs.namenode.rpc-address.geon-hadoop-cluster.namenode1</name>
         <value>nn1:8020</value>
     </property>
     <property>
-        <name>dfs.namenode.rpc-address.my-hadoop-cluster.namenode2</name>
+        <name>dfs.namenode.rpc-address.geon-hadoop-cluster.namenode2</name>
         <value>nn2:8020</value>
     </property>
     <property>
@@ -91,11 +84,11 @@
         NameNode의 HTTP 및 HTTPS 웹 인터페이스가 사용하는 IP 주소와 포트 번호를 지정 
         이 설정을 사용하면 웹 인터페이스에 대한 액세스를 제어
      -->
-        <name>dfs.namenode.http-address.my-hadoop-cluster.namenode1</name>
+        <name>dfs.namenode.http-address.geon-hadoop-cluster.namenode1</name>
         <value>nn1:50070</value>
     </property>
     <property>
-        <name>dfs.namenode.http-address.my-hadoop-cluster.namenode2</name>
+        <name>dfs.namenode.http-address.geon-hadoop-cluster.namenode2</name>
         <value>nn2:50070</value>
     </property>
     <property>
@@ -105,6 +98,13 @@
      -->
         <name>dfs.namenode.secondary.http-address</name>
          <value>nn2:50080</value>
+    </property>
+    <property>
+    <!-- 
+        데이터노드 웹UI 데이터 노드의 상태, 로그등을 확인할 수 있음
+     -->
+        <name>dfs.datanode.http.address</name>
+        <value>dn1:9120</value>
     </property>
     <property>
     <!-- 
@@ -267,34 +267,10 @@
     </property>
     <property>
     <!-- 
-        HDFS의 논리적 네임서비스 식별자를 지정
-        고가용성 구성 및 Federation 구성에서 사용
-     -->
-        <name>dfs.nameservices</name>
-        <value>my-hadoop-cluster</value>
-    </property>
-    <property>
-    <!-- 
-        지정된 논리적 네임서비스에 대한
-        고가용성 네임노드 식별자를 지정
-     -->
-        <name>dfs.ha.namenodes.my-hadoop-cluster</name>
-        <value>namenode1,namenode2</value>
-    </property>
-    <property>
-    <!-- 
-        고가용성 구성에서 네임노드가JournalNode에 대한
-        편집 로그를 공유할 수 있도록 구성된 URI를 지정
-     -->
-        <name>dfs.namenode.shared.edits.dir</name>
-        <value>qjournal://nn1:8485;nn2:8485;dn1:8485/my-hadoop-cluster</value>
-    </property>
-    <property>
-    <!-- 
         고가용성 클러스터에서 자동 장애 조치 프록시 공급자를 지정
         클라이언트가 고가용성 네임노드 중 어떤 것과 통신할지 결정하는데 사용
      -->
-        <name>dfs.client.failover.proxy.provider.my-hadoop-cluster</name>
+        <name>dfs.client.failover.proxy.provider.geon-hadoop-cluster</name>
         <value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
     </property>
     <property>

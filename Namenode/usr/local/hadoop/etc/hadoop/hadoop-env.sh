@@ -20,6 +20,11 @@
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export HADOOP_HOME=/usr/local/hadoop
 
+# Hadoop 기반 YARN Cluster에서 Spark job을 실행 하려면 
+# JVM에 충분한 힙 공간을 지정해야 된다고 한다.
+# HADOOP_HEAPSIZE="500"
+# HADOOP_INIT_HEAPSIZE="500"
+
 ##
 ## THIS FILE ACTS AS THE MASTER FILE FOR ALL HADOOP PROJECTS.
 ## SETTINGS HERE WILL BE READ BY ALL HADOOP COMMANDS.  THEREFORE,
