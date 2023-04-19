@@ -13,17 +13,21 @@
   limitations under the License. See accompanying LICENSE file.
 -->
 <configuration>
-<!-- Site specific YARN configuration properties -->
-    <property>
-        <name>yarn.nodemanager.local-dirs</name>
-        <value>file:///hdfs_dir/yarn/local</value>
-    </property>
-    <property>
-        <name>yarn.nodemanager.log-dirs</name>
-        <value>file:///hdfs_dir/yarn/logs</value>
-    </property>
-    <property>
-        <name>yarn.resourcemanager.hostname</name>
-         <value>master</value>
-    </property>
+        <!-- Site specific YARN configuration properties -->
+        <property>
+                <name>yarn.nodemanager.aux-services</name>
+                <value>mapreduce_shuffle</value>
+        </property>
+        <property>
+                <name>yarn.nodemanager.aux-services.mapreduce_shuffle.class</name>
+                <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+        </property>
+        <property>
+                <name>yarn.resourcemanager.hostname</name>
+                <value>nn1</value>
+        </property>
+        <property>
+                <name>yarn.nodemanager.vmem-check-enabled</name>
+                <value>false</value>
+        </property>
 </configuration>

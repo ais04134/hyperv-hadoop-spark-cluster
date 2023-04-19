@@ -115,9 +115,16 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-export HADOOP_HOME=/usr/local/hadoop-3.3.5
-export YARN_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export HADOOP_HOME=/usr/local/hadoop
+export HADOOP_COMMON_HOME=$HADOOP_HOME
+export HADOOP_HDFS_HOME=$HADOOP_HOME
 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
-export SPARK_HOME=/usr/local/spark-3.3.2-bin-hadoop3
+export YARN_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export HADOOP_YARN_HOME=$HADOOP_HOME
+export HADOOP_MAPRED_HOME=$HADOOP_HOME
+
+export SPARK_HOME=/usr/local/spark
+export PYTHONPATH=/usr/bin/python3
+export PYSPARK_PYTHON=/usr/bin/python3
+export ZOOKEEPER_HOME=/usr/local/zookeeper
+export ZEPPELIN_HOME=/usr/local/zeppelin
