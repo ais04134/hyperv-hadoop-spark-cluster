@@ -69,7 +69,6 @@
         <name>dfs.datanode.data.dir</name>
         <value>/usr/local/hadoop/data/dataNode</value>
     </property>
-    </property>
     <property>
     <!-- NameNode에 대한 RPC(Remote Procedure Call) 주소 -->
         <name>dfs.namenode.rpc-address.geon-hadoop-cluster.namenode1</name>
@@ -263,7 +262,7 @@
          JournalNode에서 편집 로그를 저장하는 경로를 지정
      -->
         <name>dfs.journalnode.edits.dir</name>
-        <value>/usr/local/hadoop/data/dfs/journalnode</value>
+        <value>hdfs://geon-hadoop-cluster/logs/journalnode</value>
     </property>
     <property>
     <!-- 

@@ -17,16 +17,35 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
+        <!--
+        fs.default.name은 더이상 권장되지 않는 설정
+        fs.defaultFS가 동일한 목적으로 사용되는중
         <property>
                 <name>fs.default.name</name>
                 <value>hdfs://nn1:9000</value>
         </property>
+        -->
         <property>
+        <!-- Hadoop 클러스터의 기본 파일 시스템 스키마와 네임서비스 ID를 지정 -->
                 <name>fs.defaultFS</name>
-                <value>hdfs://my-hadoop-cluster</value>
+                <value>hdfs://geon-hadoop-cluster:9000</value>
         </property>
         <property>
+        <!-- 
+                Hadoop 클러스터의 고가용성(HA)을 지원하기 위해 사용되는 ZooKeeper 서버의 목록을 지정
+                이 서버들은 HDFS 네임노드와 YARN 리소스 매니저 간의 상태 정보를 동기화하는 데 사용
+         -->
                 <name>ha.zookeeper.quorum</name>
                 <value>nn1:2181,nn2:2181,dn1:2181</value>
+        </property>
+        <property>
+        <!-- 입출력 buffer의 크기를 바이트 단위로 지정 기본값(128KB) -->
+                <name>io.file.buffer.size</name>
+                <value>131072</value>
+        </property>
+        <property>
+        <!-- Hadoop IPC(Inter-Process Communication) 클라이언트가 서버에 연결할 때 시도할 최대 횟수 -->
+                <name>ipc.client.connect.max.retries</name>
+                <value>50</value>
         </property>
 </configuration>
