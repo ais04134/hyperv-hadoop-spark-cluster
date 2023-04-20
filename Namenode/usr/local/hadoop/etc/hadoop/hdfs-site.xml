@@ -139,4 +139,9 @@
         <name>dfs.data.dir</name>
         <value>/usr/local/hadoop/data/data</value>
     </property>
+    <property>
+    <!--ACL 설정 (HDFS 권한 설정) -->
+        <name>dfs.namenode.acls.enabled</name>
+        <value>true</value>
+    </property>
 </configuration>

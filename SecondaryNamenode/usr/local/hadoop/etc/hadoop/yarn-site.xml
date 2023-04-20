@@ -26,34 +26,11 @@
         <!-- YARN 컨테이너 로그를 집계하여 HDFS에 저장할지 여부 -->
                 <name>yarn.log-aggregation-enabled</name>
                 <value>true</value>
-        </property> 
+        </property>
         <property>
         <!-- 집계된 로그를 HDFS에서 유지하는 기간을 초 단위로 지정 -->
                 <name>yarn.log-aggregation.retain-seconds</name>
                 <value>2592000</value> <!-- 30 days -->
-        </property>
-        <property>
-        <!-- 리소스 매니저 주소 -->
-                <name>yarn.resourcemanager.address</name>
-                <value>192.168.0.18:8032</value>
-        </property>
-        <property>
-        <!-- 리소스 매니저 스케줄러 주소 -->
-                <name>yarn.resourcemanager.scheduler.address</name>
-                <value>192.168.0.18:8030</value>
-        </property>
-        <property>
-        <!-- 리소스 매니저 웹 응용 프로그램 주소 -->
-                <name>yarn.resourcemanager.webapp.address</name>
-                <value>192.168.0.18:8088</value>
-        </property>
-        <property>
-        <!--
-            YARN이 컨테이너의 가상 메모리 사용량을 확인하는지 여부를 결정
-            이 설정을 비활성화하면 메모리 사용량에 관한 문제를 줄일 수 있다. 
-        -->
-                <name>yarn.nodemanager.vmem-check-enabled</name>
-                <value>false</value>
         </property>
         <property>
         <!-- 노드 매니저에서 사용할 수 있는 보조 서비스를 지정 -->        
