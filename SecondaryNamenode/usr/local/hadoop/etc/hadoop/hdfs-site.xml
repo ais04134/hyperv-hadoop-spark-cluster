@@ -18,71 +18,124 @@
 
 <configuration>
     <!-- configuration hadoop -->
+        <property>
+    <!-- 
+        HDFS의 논리적 네임서비스 식별자를 지정
+        고가용성 구성 및 Federation 구성에서 사용
+     -->
+        <name>dfs.nameservices</name>
+        <value>geon-hadoop-cluster</value>
+    </property>
     <property>
+    <!-- 
+        지정된 논리적 네임서비스에 대한
+        고가용성 네임노드 식별자를 지정
+     -->
+        <name>dfs.ha.namenodes.geon-hadoop-cluster</name>
+        <value>namenode1,namenode2</value>
+    </property>
+    <property>
+    <!-- 
+        고가용성 구성에서 네임노드가JournalNode에 대한
+        편집 로그를 공유할 수 있도록 구성된 URI를 지정
+     -->
+        <name>dfs.namenode.shared.edits.dir</name>
+        <value>qjournal://192.168.0.18:8485;192.168.0.19:8485;192.168.0.20:8485/geon-hadoop-cluster</value>
+    </property>
+    <property>
+    <!-- HDFS의 데이터 복제 계수 -->
         <name>dfs.replication</name>
         <value>3</value>
     </property>
     <property>
+    <!-- 
+        NameNode의 메타데이터가 저장되는 디렉토리를 지정, 이 디렉토리는 NameNode가 시작될 때 사용
+        파일 시스템 이미지 및 에디트 로그가 저장된다.
+    -->
         <name>dfs.namenode.name.dir</name>
         <value>/usr/local/hadoop/data/nameNode</value>
     </property>
     <property>
+    <!-- DataNode에서 사용되는 HDFS 데이터 디렉토리를 지정한다. 여기에 데이터 블록이 저장된다. -->
         <name>dfs.datanode.data.dir</name>
         <value>/usr/local/hadoop/data/dataNode</value>
     </property>
     <property>
+    <!-- NameNode에 대한 RPC(Remote Procedure Call) 주소 -->
+        <name>dfs.namenode.rpc-address.geon-hadoop-cluster.namenode1</name>
+        <value>192.168.0.18:8020</value>
+    </property>
+    <property>
+        <name>dfs.namenode.rpc-address.geon-hadoop-cluster.namenode2</name>
+        <value>192.168.0.19:8020</value>
+    </property>
+    <property>
+    <!--
+        NameNode의 HTTP 및 HTTPS 웹 인터페이스가 사용하는 IP 주소와 포트 번호를 지정 
+        이 설정을 사용하면 웹 인터페이스에 대한 액세스를 제어
+     -->
+        <name>dfs.namenode.http-address.geon-hadoop-cluster.namenode1</name>
+        <value>192.168.0.18:50070</value>
+    </property>
+    <property>
+        <name>dfs.namenode.http-address.geon-hadoop-cluster.namenode2</name>
+        <value>192.168.0.19:50070</value>
+    </property>
+    <property>
+    <!-- 
+        WebHDFS REST API
+        기본값은 true 
+        원격 클라이언트와 애플리케이션에서 HDFS를 사용 가능
+     -->
+        <name>dfs.webhdfs.enabled</name>
+        <value>true</value>
+    </property>
+    <property>
+    <!-- 
+         HDFS의 고가용성(HA) 구성에서 사용되며
+         JournalNode에서 편집 로그를 저장하는 경로를 지정
+     -->
         <name>dfs.journalnode.edits.dir</name>
         <value>/usr/local/hadoop/data/dfs/journalnode</value>
     </property>
     <property>
-        <name>dfs.nameservices</name>
-        <value>my-hadoop-cluster</value>
-    </property>
-    <property>
-        <name>dfs.ha.namenodes.my-hadoop-cluster</name>
-        <value>namenode1,namenode2</value>
-    </property>
-    <property>
-        <name>dfs.namenode.rpc-address.my-hadoop-cluster.namenode1</name>
-        <value>nn1:8020</value>
-    </property>
-    <property>
-        <name>dfs.namenode.rpc-address.my-hadoop-cluster.namenode2</name>
-        <value>nn2:8020</value>
-    </property>
-    <property>
-        <name>dfs.namenode.http-address.my-hadoop-cluster.namenode1</name>
-        <value>nn1:50070</value>
-    </property>
-    <property>
-        <name>dfs.namenode.http-address.my-hadoop-cluster.namenode2</name>
-        <value>nn2:50070</value>
-    </property>
-    <property>
-        <name>dfs.namenode.shared.edits.dir</name>
-        <value>qjournal://nn1:8485;nn2:8485;dn1:8485/my-hadoop-cluster</value>
-    </property>
-    <property>
-        <name>dfs.client.failover.proxy.provider.my-hadoop-cluster</name>
+    <!-- 
+        고가용성 클러스터에서 자동 장애 조치 프록시 공급자를 지정
+        클라이언트가 고가용성 네임노드 중 어떤 것과 통신할지 결정하는데 사용
+     -->
+        <name>dfs.client.failover.proxy.provider.geon-hadoop-cluster</name>
         <value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
     </property>
     <property>
+    <!-- 
+        네임노드 간의 장애 조치(failover)를 처리하기 위한 펜싱 방법을 지정
+        sshfence는 SSH를 사용하여 다른 네임노드를 격리하는 방법
+     -->
         <name>dfs.ha.fencing.methods</name>
         <value>shell(/bin/true)</value>
     </property>
     <property>
+    <!-- 
+        SSH 펜싱을 사용할 때 사용되는 개인 키 파일의 경로를 지정
+     -->
         <name>dfs.ha.fencing.ssh.private-key-files</name>
         <value>/home/geon/.ssh/id_rsa</value>
     </property>
     <property> 
+    <!-- 
+        자동 장애 조치 기능 
+        true로 설정되면 하나의 네임노드가 실패할 경우 자동으로 다른 네임노드로 전환
+     -->
         <name>dfs.ha.automatic-failover.enabled</name>
         <value>true</value>
     </property>
     <property>
+    <!-- 네임노드의 메타데이터를 저장할 디렉터리를 지정 -->
         <name>dfs.name.dir</name>
         <value>/usr/local/hadoop/data/name</value>
     </property>
     <property>
+    <!-- 데이터노드의 HDFS 데이터를 저장할 디렉터리를 지정 -->
         <name>dfs.data.dir</name>
         <value>/usr/local/hadoop/data/data</value>
     </property>
