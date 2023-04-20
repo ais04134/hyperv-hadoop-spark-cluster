@@ -4,13 +4,13 @@ hdfs format
   
 #>
 
-ssh geon@192.168.0.18 hdfs namenode -format
-ssh geon@192.168.0.19 hdfs namenode -format
+ssh geon@nn1 hdfs namenode -format
+ssh geon@nn2 hdfs namenode -format
 
-ssh geon@192.168.0.20 hdfs datanode -format
-ssh geon@192.168.0.21 hdfs datanode -format
-ssh geon@192.168.0.22 hdfs datanode -format
-ssh geon@192.168.0.23 hdfs datanode -format
-ssh geon@192.168.0.24 hdfs datanode -format
+ssh geon@dn1 hdfs datanode -format
+ssh geon@dn2 hdfs datanode -format
+ssh geon@dn3 hdfs datanode -format
+ssh geon@dn4 hdfs datanode -format
+ssh geon@dn5 hdfs datanode -format
 
 echo "hdfs format successfully."

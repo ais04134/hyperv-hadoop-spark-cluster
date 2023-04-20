@@ -20,7 +20,32 @@
             클라이언트와 노드 매니저가 리소스 매니저와 통신할 수 있게 해준다. 
          -->
                 <name>yarn.resourcemanager.hostname</name>
-                <value>nn1</value>
+                <value>192.168.0.18</value>
+        </property>
+        <property>
+        <!-- YARN 컨테이너 로그를 집계하여 HDFS에 저장할지 여부 -->
+                <name>yarn.log-aggregation-enabled</name>
+                <value>true</value>
+        </property>
+        <property>
+        <!-- 집계된 로그를 HDFS에서 유지하는 기간을 초 단위로 지정 -->
+                <name>yarn.log-aggregation.retain-seconds</name>
+                <value>2592000</value> <!-- 30 days -->
+        </property>
+        <property>
+        <!-- 리소스 매니저 주소 -->
+                <name>yarn.resourcemanager.address</name>
+                <value>192.168.0.18:8032</value>
+        </property>
+        <property>
+        <!-- 리소스 매니저 스케줄러 주소 -->
+                <name>yarn.resourcemanager.scheduler.address</name>
+                <value>192.168.0.18:8030</value>
+        </property>
+        <property>
+        <!-- 리소스 매니저 웹 응용 프로그램 주소 -->
+                <name>yarn.resourcemanager.webapp.address</name>
+                <value>192.168.0.18:8088</value>
         </property>
         <property>
         <!--

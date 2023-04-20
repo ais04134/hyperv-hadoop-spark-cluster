@@ -31,7 +31,7 @@ start chrome http://192.168.0.18:8030/
 start chrome http://192.168.0.19:50080/
 
 #네임노드가JournalNode에 대한 편집 로그를 공유할 수 있도록 구성된 URI
-qjournal://nn1:8485;nn2:8485;dn1:8485/my-hadoop-cluster
+qjournal://192.168.0.18:8485;192.168.0.19:8485;192.168.0.20:8485/my-hadoop-cluster
 #>
 
 
