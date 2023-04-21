@@ -23,16 +23,6 @@
                 <value>192.168.0.18</value>
         </property>
         <property>
-        <!-- YARN 컨테이너 로그를 집계하여 HDFS에 저장할지 여부 -->
-                <name>yarn.log-aggregation-enabled</name>
-                <value>true</value>
-        </property>
-        <property>
-        <!-- 집계된 로그를 HDFS에서 유지하는 기간을 초 단위로 지정 -->
-                <name>yarn.log-aggregation.retain-seconds</name>
-                <value>2592000</value> <!-- 30 days -->
-        </property>
-        <property>
         <!-- 노드 매니저에서 사용할 수 있는 보조 서비스를 지정 -->        
                 <name>yarn.nodemanager.aux-services</name>
                 <value>mapreduce_shuffle</value>
