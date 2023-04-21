@@ -1,4 +1,4 @@
-## 설치하고자 하는 파일에 dockerfile을 옮긴 다음에 실행 
+# 설치하고자 하는 파일에 dockerfile을 옮긴 다음에 실행 
 
 ```
 docker build -t pyspark .
@@ -9,7 +9,7 @@ docker build -t pyspark .
 따라서 .bashrc 파일에서 이전에 설정한 PYTHON_HOME 값은 Dockerfile에서 정의한 새 값으로 대체된다. 
 
 ---- 
-# 도커가 설치되어 있지 않다면, 리눅스에서 도커 엔진 설치 후 진행
+## 도커가 설치되어 있지 않다면, 리눅스에서 도커 엔진 설치 후 진행
 
 ### **apt 저장소를 사용하여 설치**
 
