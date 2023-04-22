@@ -20,7 +20,7 @@
             클라이언트와 노드 매니저가 리소스 매니저와 통신할 수 있게 해준다. 
          -->
                 <name>yarn.resourcemanager.hostname</name>
-                <value>192.168.0.18</value>
+                <value>nn1</value>
         </property>
         <property>
         <!-- 노드 매니저에서 사용할 수 있는 보조 서비스를 지정 -->        
