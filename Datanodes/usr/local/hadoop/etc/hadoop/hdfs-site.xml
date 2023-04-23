@@ -40,7 +40,7 @@
         편집 로그를 공유할 수 있도록 구성된 URI를 지정
      -->
         <name>dfs.namenode.shared.edits.dir</name>
-        <value>qjournal://192.168.0.18:8485;192.168.0.19:8485;192.168.0.20:8485/geon-hadoop-cluster</value>
+        <value>qjournal://nn1:8485;nn2:8485;dn1:8485/geon-hadoop-cluster</value>
     </property>
     <property>
     <!-- HDFS의 데이터 복제 계수 -->
@@ -63,11 +63,11 @@
     <property>
     <!-- NameNode에 대한 RPC(Remote Procedure Call) 주소 -->
         <name>dfs.namenode.rpc-address.geon-hadoop-cluster.namenode1</name>
-        <value>192.168.0.18:8020</value>
+        <value>nn1:8020</value>
     </property>
     <property>
         <name>dfs.namenode.rpc-address.geon-hadoop-cluster.namenode2</name>
-        <value>192.168.0.19:8020</value>
+        <value>nn2:8020</value>
     </property>
     <property>
     <!--
@@ -75,11 +75,11 @@
         이 설정을 사용하면 웹 인터페이스에 대한 액세스를 제어
      -->
         <name>dfs.namenode.http-address.geon-hadoop-cluster.namenode1</name>
-        <value>192.168.0.18:50070</value>
+        <value>nn1:50070</value>
     </property>
     <property>
         <name>dfs.namenode.http-address.geon-hadoop-cluster.namenode2</name>
-        <value>192.168.0.19:50070</value>
+        <value>nn2:50070</value>
     </property>
     <property>
     <!-- 
