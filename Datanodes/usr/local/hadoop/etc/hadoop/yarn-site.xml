@@ -74,22 +74,22 @@
         </property>
         <property>
         <!-- RM의 hostname -->
-                <name>yarn.resourcemanager.hostname.geon-yarn-cluster.resourcemanager1</name>
+                <name>yarn.resourcemanager.hostname.resourcemanager1</name>
                 <value>nn1</value>
         </property>
         <property>
        <!-- RM의 hostname -->
-                <name>yarn.resourcemanager.hostname.geon-yarn-cluster.resourcemanager2</name>
+                <name>yarn.resourcemanager.hostname.resourcemanager2</name>
                 <value>nn2</value>
         </property>
         <property>
         <!-- resourcemanager web 애플리케이션 host:port -->
-                <name>yarn.resourcemanager.webapp.address.geon-yarn-cluster.resourcemanager1</name>
+                <name>yarn.resourcemanager.webapp.address.resourcemanager1</name>
                 <value>nn1:8088</value>
         </property>
         <property>
         <!-- resourcemanager web 애플리케이션 host:port -->
-                <name>yarn.resourcemanager.webapp.address.geon-yarn-cluster.resourcemanager2</name>
+                <name>yarn.resourcemanager.webapp.address.resourcemanager2</name>
                 <value>nn2:8088</value>
         </property>
         <property>
