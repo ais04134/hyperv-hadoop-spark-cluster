@@ -128,3 +128,7 @@ export PYTHONPATH=/usr/bin/python3
 export PYSPARK_PYTHON=/usr/bin/python3
 export ZOOKEEPER_HOME=/usr/local/zookeeper
 export ZEPPELIN_HOME=/usr/local/zeppelin
+
+# Hadoop의 기본 라이브러리를 포함하도록 환경 변수 설정
+# Hadoop YARN을 사용하여 Spark 클러스터 애플리케이션을 실행하기 위함
+export LD_LIBRARY_PATH=$HADOOP_HOME/lib/native:$LD_LIBRARY_PATH
