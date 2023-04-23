@@ -12,17 +12,10 @@
   See the License for the specific language governing permissions and
   limitations under the License. See accompanying LICENSE file.
 -->
+
 <configuration>
         <!-- Site specific YARN configuration properties -->
-         <property>
-         <!-- 
-            리소스 매니저의 호스트 이름을 지정, 
-            클라이언트와 노드 매니저가 리소스 매니저와 통신할 수 있게 해준다. 
-         -->
-                <name>yarn.resourcemanager.hostname</name>
-                <value>nn1</value>
-        </property>
-        <property>
+                 <property>
         <!-- 노드 매니저에서 사용할 수 있는 보조 서비스를 지정 -->        
                 <name>yarn.nodemanager.aux-services</name>
                 <value>mapreduce_shuffle</value>
@@ -31,6 +24,73 @@
         <!-- MapReduce 셔플 보조 서비스의 클래스를 지정 -->
                 <name>yarn.nodemanager.aux-services.mapreduce_shuffle.class</name>
                 <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+        </property>
+        <property>
+        <!-- 
+                YARN 메타데이터가 저장되는 디렉토리 지정, 
+                이 디렉토리는 NameNode가 시작될 때 
+                사용 파일 시스템 및 이미지 및 에디트 로그가 저장된다.
+          -->
+                <name>yarn.nodemanager.aux-services.mapreduce_shuffle.class</name>
+                <value>/usr/local/hadoop/data/yarn/nm-local-dir</value>
+        </property>
+        <property>
+        <!-- RM 상태가 저장될 FileSystem 경로의 위치를 가르키는 URI -->
+                <name>yarn.resourcemanager.fs.state-store.uri</name>
+                <value>/usr/local/hadoop/data/yarn/system/rmstore</value>
+        </property>
+        <property>
+        <!-- RM 시작시 STATE 복구 여부 -->
+                <name>yarn.resourcemanager.recovery.enabled</name>
+                <value>true</value>
+        </property>
+        <property>
+        <!-- 
+                영구 저장소로 사용할 class,
+                RM의 상태 정보저장을 위해 주키퍼 저장소 사용
+         -->
+                <name>yarn.resourcemanager.store.class</name>
+                <value>org.apache.hadoop.yarn.server.resourcemanager.recovery.ZKRMStateStore</value>
+        </property>
+        <property>
+        <!-- 주키퍼 서버 주소 -->
+                <name>yarn.resourcemanager.zk-address</name>
+                <value>nn1:2181,nn2:2181,dn1:2181</value>
+        </property>
+        <property>
+        <!-- RM의 HA 사용 여부, true -->
+                <name>yarn.resourcemanager.ha.enabled</name>
+                <value>true</value>
+        </property>
+        <property>
+        <!-- RM cluster 그룹명 -->
+                <name>yarn.resourcemanager.cluster-id</name>
+                <value>geon-yarn-cluster</value>
+        </property>
+        <property>
+        <!-- RM 이름 지정 -->
+                <name>yarn.resourcemanager.ha.rm-ids</name>
+                <value>resourcemanager1,resourcemanager2</value>
+        </property>
+        <property>
+        <!-- RM의 hostname -->
+                <name>yarn.resourcemanager.hostname.resourcemanager1</name>
+                <value>nn1</value>
+        </property>
+        <property>
+       <!-- RM의 hostname -->
+                <name>yarn.resourcemanager.hostname.resourcemanager2</name>
+                <value>nn2</value>
+        </property>
+        <property>
+        <!-- resourcemanager web 애플리케이션 host:port -->
+                <name>yarn.resourcemanager.webapp.address.resourcemanager1</name>
+                <value>nn1:8088</value>
+        </property>
+        <property>
+        <!-- resourcemanager web 애플리케이션 host:port -->
+                <name>yarn.resourcemanager.webapp.address.resourcemanager2</name>
+                <value>nn2:8088</value>
         </property>
         <property>
         <!-- 
