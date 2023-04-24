@@ -31,7 +31,7 @@
                 이 디렉토리는 NameNode가 시작될 때 
                 사용 파일 시스템 및 이미지 및 에디트 로그가 저장된다.
           -->
-                <name>yarn.nodemanager.aux-services.mapreduce_shuffle.class</name>
+                <name>yarn.nodemanager.local-dirs</name>
                 <value>/usr/local/hadoop/data/yarn/nm-local-dir</value>
         </property>
         <property>
