@@ -92,38 +92,5 @@
                 <name>yarn.resourcemanager.webapp.address.resourcemanager2</name>
                 <value>nn2:8088</value>
         </property>
-        <property>
-        <!-- 
-            각 노드 매니저의 사용 가능한 총메모리를 제어
-            12g(12288), 운영체제 등을 고려해 70~80% 비율 
-        -->
-                <name>yarn.nodemanager.resource.memory-mb</name>
-                <value>12288</value>
-        </property>
-        <property>
-        <!-- 각 노드 매니저의 사용 가능한 총 CPU 코어 수를 제어, 각 노드당 2개의 코어가 있으므로 2개로 지정 -->
-                <name>yarn.nodemanager.resource.cpu-vcores</name>
-                <value>2</value>
-        </property>
-        <property>
-        <!-- YARN 스케줄러가 할당할 수 있는 최소 메모리 크기를 결정, 요기서는 1g  -->
-                <name>yarn.scheduler.minimum-allocation-mb</name>
-                <value>1024</value>
-        </property>
-        <property>
-        <!-- YARN 스케줄러가 할당할 수 있는 최대 메모리 크기, 8g -->
-                <name>yarn.scheduler.maximum-allocation-mb</name>
-                <value>8192</value>
-        </property>
-        <property>
-        <!-- YARN 스케줄러가 할당할 수 있는 최소 CPU 코어 수, 1 -->
-                <name>yarn.scheduler.minimum-allocation-vcores</name>
-                <value>1</value>
-        </property>
-        <property>
-        <!-- YARN 스케줄러가 할당할 수 있는 최대 CPU 코어 수, 10 -->
-                <name>yarn.scheduler.maximum-allocation-vcores</name>
-                <value>10</value>
-        </property>
 </configuration>
 
