@@ -62,6 +62,4 @@ pyspark-3.3.2
 ## 4. 동작
 
 ## 5. 더 나아가서
-![image][https://geon-technologies/GeonTechnologies/Hadoop-Ecosystem/_apis/build/status/Hadoop-Ecosystem-Azure%20Cloud%20Services-CI?branchName=master]
-![image][https://geon-technologies/GeonTechnologies/Hadoop-Ecosystem/_apis/build/status/Hadoop-Ecosystem-Azure%20Cloud%20Services-CI]
 
