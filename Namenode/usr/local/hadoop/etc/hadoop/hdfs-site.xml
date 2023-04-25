@@ -18,30 +18,6 @@
 
 <configuration>
     <!-- configuration hadoop -->
-        <property>
-    <!-- 
-        HDFS의 논리적 네임서비스 식별자를 지정
-        고가용성 구성 및 Federation 구성에서 사용
-     -->
-        <name>dfs.nameservices</name>
-        <value>geon-hadoop-cluster</value>
-    </property>
-    <property>
-    <!-- 
-        지정된 논리적 네임서비스에 대한
-        고가용성 네임노드 식별자를 지정
-     -->
-        <name>dfs.ha.namenodes.geon-hadoop-cluster</name>
-        <value>namenode1,namenode2</value>
-    </property>
-    <property>
-    <!-- 
-        고가용성 구성에서 네임노드가JournalNode에 대한
-        편집 로그를 공유할 수 있도록 구성된 URI를 지정
-     -->
-        <name>dfs.namenode.shared.edits.dir</name>
-        <value>qjournal://nn1:8485;nn2:8485;dn1:8485/geon-hadoop-cluster</value>
-    </property>
     <property>
     <!-- HDFS의 데이터 복제 계수 -->
         <name>dfs.replication</name>
@@ -59,6 +35,30 @@
     <!-- DataNode에서 사용되는 HDFS 데이터 디렉토리를 지정한다. 여기에 데이터 블록이 저장된다. -->
         <name>dfs.datanode.data.dir</name>
         <value>/usr/local/hadoop/data/dataNode</value>
+    </property>
+    <property>
+    <!-- 
+         HDFS의 고가용성(HA) 구성에서 사용되며
+         JournalNode에서 편집 로그를 저장하는 경로를 지정
+     -->
+        <name>dfs.journalnode.edits.dir</name>
+        <value>/usr/local/hadoop/data/dfs/journalnode</value>
+    </property>
+    <property>
+    <!-- 
+        HDFS의 논리적 네임서비스 식별자를 지정
+        고가용성 구성 및 Federation 구성에서 사용
+     -->
+        <name>dfs.nameservices</name>
+        <value>geon-hadoop-cluster</value>
+    </property>
+    <property>
+    <!-- 
+        지정된 논리적 네임서비스에 대한
+        고가용성 네임노드 식별자를 지정
+     -->
+        <name>dfs.ha.namenodes.geon-hadoop-cluster</name>
+        <value>namenode1,namenode2</value>
     </property>
     <property>
     <!-- NameNode에 대한 RPC(Remote Procedure Call) 주소 -->
@@ -83,20 +83,11 @@
     </property>
     <property>
     <!-- 
-        WebHDFS REST API
-        기본값은 true 
-        원격 클라이언트와 애플리케이션에서 HDFS를 사용 가능
+        고가용성 구성에서 네임노드가JournalNode에 대한
+        편집 로그를 공유할 수 있도록 구성된 URI를 지정
      -->
-        <name>dfs.webhdfs.enabled</name>
-        <value>true</value>
-    </property>
-    <property>
-    <!-- 
-         HDFS의 고가용성(HA) 구성에서 사용되며
-         JournalNode에서 편집 로그를 저장하는 경로를 지정
-     -->
-        <name>dfs.journalnode.edits.dir</name>
-        <value>/usr/local/hadoop/data/dfs/journalnode</value>
+        <name>dfs.namenode.shared.edits.dir</name>
+        <value>qjournal://nn1:8485;nn2:8485;dn1:8485/geon-hadoop-cluster</value>
     </property>
     <property>
     <!-- 
@@ -140,8 +131,12 @@
         <value>/usr/local/hadoop/data/data</value>
     </property>
     <property>
-    <!--ACL 설정 (HDFS 권한 설정) -->
-        <name>dfs.namenode.acls.enabled</name>
+    <!-- 
+        WebHDFS REST API
+        기본값은 true 
+        원격 클라이언트와 애플리케이션에서 HDFS를 사용 가능
+     -->
+        <name>dfs.webhdfs.enabled</name>
         <value>true</value>
     </property>
 </configuration>
