@@ -15,7 +15,7 @@
 
 <configuration>
         <!-- Site specific YARN configuration properties -->
-                 <property>
+         <property>
         <!-- 노드 매니저에서 사용할 수 있는 보조 서비스를 지정 -->        
                 <name>yarn.nodemanager.aux-services</name>
                 <value>mapreduce_shuffle</value>
@@ -33,6 +33,16 @@
           -->
                 <name>yarn.nodemanager.local-dirs</name>
                 <value>/usr/local/hadoop/data/yarn/nm-local-dir</value>
+        </property>
+        <property>
+        <!-- RM cluster 그룹명 -->
+                <name>yarn.resourcemanager.cluster-id</name>
+                <value>geon-yarn-cluster</value>
+        </property>
+        <property>
+        <!-- YARN 가상 메모리 제한 여부, false -->
+                <name>yarn.nodemanager.vmem-check-enabled</name>
+                <value>false</value>
         </property>
         <property>
         <!-- RM 상태가 저장될 FileSystem 경로의 위치를 가르키는 URI -->
@@ -63,11 +73,6 @@
                 <value>true</value>
         </property>
         <property>
-        <!-- RM cluster 그룹명 -->
-                <name>yarn.resourcemanager.cluster-id</name>
-                <value>geon-yarn-cluster</value>
-        </property>
-        <property>
         <!-- RM 이름 지정 -->
                 <name>yarn.resourcemanager.ha.rm-ids</name>
                 <value>resourcemanager1,resourcemanager2</value>
@@ -93,4 +98,3 @@
                 <value>nn2:8088</value>
         </property>
 </configuration>
-

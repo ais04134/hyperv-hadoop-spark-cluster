@@ -15,7 +15,7 @@
 
 # Hadoop 기반 YARN Cluster에서 Spark job을 실행 하려면 
 # JVM에 충분한 힙 공간을 지정해야 된다고 한다.
-# HADOOP_JOB_HISTORYSERVER_HEAPSIZE=250
+HADOOP_JOB_HISTORYSERVER_HEAPSIZE=250
 
 ##
 ## THIS FILE ACTS AS AN OVERRIDE FOR hadoop-env.sh FOR ALL
