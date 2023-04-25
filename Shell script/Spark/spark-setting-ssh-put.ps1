@@ -33,15 +33,15 @@ scp C:\Users\is041\geon_hyeon\Git\Hadoop-Ecosystem\Datanodes\usr\local\spark\con
 
 
 
-# nn1 workers
-scp C:\Users\is041\geon_hyeon\Git\Hadoop-Ecosystem\Namenode\usr\local\spark\conf\workers nn1:/usr/local/spark/conf/
-# nn2 workers
-scp C:\Users\is041\geon_hyeon\Git\Hadoop-Ecosystem\SecondaryNamenode\usr\local\spark\conf\workers nn2:/usr/local/spark/conf/
-# dn1-5 workers
-scp C:\Users\is041\geon_hyeon\Git\Hadoop-Ecosystem\Datanodes\usr\local\spark\conf\workers dn1:/usr/local/spark/conf/
-scp C:\Users\is041\geon_hyeon\Git\Hadoop-Ecosystem\Datanodes\usr\local\spark\conf\workers dn2:/usr/local/spark/conf/
-scp C:\Users\is041\geon_hyeon\Git\Hadoop-Ecosystem\Datanodes\usr\local\spark\conf\workers dn3:/usr/local/spark/conf/
-scp C:\Users\is041\geon_hyeon\Git\Hadoop-Ecosystem\Datanodes\usr\local\spark\conf\workers dn4:/usr/local/spark/conf/
-scp C:\Users\is041\geon_hyeon\Git\Hadoop-Ecosystem\Datanodes\usr\local\spark\conf\workers dn5:/usr/local/spark/conf/
+## nn1 workers
+# scp C:\Users\is041\geon_hyeon\Git\Hadoop-Ecosystem\Namenode\usr\local\spark\conf\workers nn1:/usr/local/spark/conf/
+## nn2 workers
+# scp C:\Users\is041\geon_hyeon\Git\Hadoop-Ecosystem\SecondaryNamenode\usr\local\spark\conf\workers nn2:/usr/local/spark/conf/
+## dn1-5 workers
+# scp C:\Users\is041\geon_hyeon\Git\Hadoop-Ecosystem\Datanodes\usr\local\spark\conf\workers dn1:/usr/local/spark/conf/
+# scp C:\Users\is041\geon_hyeon\Git\Hadoop-Ecosystem\Datanodes\usr\local\spark\conf\workers dn2:/usr/local/spark/conf/
+# scp C:\Users\is041\geon_hyeon\Git\Hadoop-Ecosystem\Datanodes\usr\local\spark\conf\workers dn3:/usr/local/spark/conf/
+# scp C:\Users\is041\geon_hyeon\Git\Hadoop-Ecosystem\Datanodes\usr\local\spark\conf\workers dn4:/usr/local/spark/conf/
+# scp C:\Users\is041\geon_hyeon\Git\Hadoop-Ecosystem\Datanodes\usr\local\spark\conf\workers dn5:/usr/local/spark/conf/
 
 echo "Spark 설정파일이 무사히 전송되었습니다."
