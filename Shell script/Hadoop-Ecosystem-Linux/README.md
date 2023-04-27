@@ -76,24 +76,7 @@ hdfs haadmin -getServiceState namenode2
 ```xml
 # Spark 클러스터 실행, nn1
 ssh nn1
-stop-all.sh
-start-all.sh
-
-## Zookeeper 실행
-sudo /usr/local/zookeeper/bin/zkServer.sh start
-
-ssh nn2
-sudo /usr/local/zookeeper/bin/zkServer.sh start
-exit
-
-ssh dn1
-sudo /usr/local/zookeeper/bin/zkServer.sh start
-exit
-
-ssh nn1
 $SPARK_HOME/sbin/start-all.sh
-mapred --daemon start historyserver
-start-dfs.sh
 ```
 
 ## HDFS test 디렉토리 생성
