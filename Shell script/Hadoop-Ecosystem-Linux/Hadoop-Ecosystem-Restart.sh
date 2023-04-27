@@ -1,9 +1,5 @@
 # Hyper - V Ubuntu terminal(nn1)
 
-# 쉘 스크립트 편집
-vim cluster-restart-all.sh
-
-# 아래 내용 추가 후 저장
 # Zeppelin stop
 # /usr/local/zeppelin/bin/zeppelin-daemon.sh stop
 
@@ -48,5 +44,5 @@ $SPARK_HOME/sbin/start-all.sh
 # /usr/local/zeppelin/bin/zeppelin-daemon.sh start
 
 # nn1, nn2 서로 역할이 바뀐다.
-hdfs haadmin -transitionToActive namenode1 --forcemanual
-hdfs haadmin -transitionToStandby namenode2 --forcemanual
+# hdfs haadmin -transitionToActive namenode1 --forcemanual
+# hdfs haadmin -transitionToStandby namenode2 --forcemanual
