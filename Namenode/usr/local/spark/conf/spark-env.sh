@@ -81,5 +81,11 @@ export SPARK_CONF_DIR=/usr/local/spark/conf
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export HADOOP_HOME=/usr/local/hadoop
 export HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop
-export SPARK_MASTER_WEBUI_PORT=18080
+
+# History Server의 공용 주소, 이 설정이 없을 경우 서버의 내부 주소를 사용하여 링크가 끊어질 수 있다.
+export SPARK_PUBLIC_DNS="192.168.0.26"
+
+# Spark 독립 실행형 모드에서 master에 대한 Web UI  포트이다.
+# YARN을 사용하고 있으므로 지금 구성에서는 필요없다. 
+# export SPARK_MASTER_WEBUI_PORT=18080
 
