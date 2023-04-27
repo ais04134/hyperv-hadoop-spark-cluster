@@ -19,8 +19,8 @@ mapred --daemon start historyserver
 $SPARK_HOME/sbin/start-all.sh
 
 # nn1, nn2 서로 역할이 바뀐다.
-hdfs haadmin -transitionToActive namenode1 --forcemanual
-hdfs haadmin -transitionToStandby namenode2 --forcemanual
+# hdfs haadmin -transitionToActive namenode1 --forcemanual
+# hdfs haadmin -transitionToStandby namenode2 --forcemanual
 
 # jupyter Run
 # jupyter notebook --ip=0.0.0.0 --port=18890 
