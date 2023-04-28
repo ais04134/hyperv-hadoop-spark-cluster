@@ -97,14 +97,4 @@
                 <name>yarn.resourcemanager.webapp.address.resourcemanager2</name>
                 <value>nn2:8088</value>
         </property>
-        <property>
-        <!-- log 집계 활성화 여부, true -->
-                <name>yarn.log-aggregation-enable</name>
-                <value>true</value>
-        </property>
-        <property>
-        <!-- 응용 프로그램이 완료된 후 nodemanager가 log 삭제하는 시간 -->
-                <name>yarn.nodemanager.delete.debug-delay-sec</name>
-                <value>36000</value>
-        </property>
 </configuration>
