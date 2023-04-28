@@ -86,6 +86,9 @@ $SPARK_HOME/sbin/start-all.sh
 hdfs dfs -mkdir /test
 hdfs dfs -mkdir /logs
 hdfs dfs -mkdir /logs/spark
+# 권한 및 그룹 설정 
+hdfs dfs chmod -R 777 /logs
+chown -R geon:geon /logs
 ```
 
 ## test 파일 생성
