@@ -19,7 +19,3 @@ version = 1.0
 
 def print_version_info():
     print(f"The version of this game is {version}.")
-
-__all__ = [
-    "TestData"
-]
