@@ -27,7 +27,7 @@ Hadoop-Ecosystem을 활용하여, cluster 구성을 만들고 이를 활용하�
 
 ## 2. 구성환경
 
-Windows server 2022 Datasenter OS의 운영체제에서, Hyper-V를 이용해 7개의 가상환경을 만들어 진행하였다.
+Windows server 2022 Dataenter OS의 운영체제에서, Hyper-V를 이용해 7개의 가상환경을 만들어 진행하였다.
 
 Virtual Machine 의 OS는 Ubuntu server 22.04 LTS 이다.
 
