@@ -8,7 +8,6 @@ Hadoop-Ecosystem-Cluster
     2.1 노드 구성
 
 3. 아키텍처 구성
-
 ```
 
 ## 1. 프로젝트 소개
